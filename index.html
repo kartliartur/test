@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>StroyPortal</title>
+		<meta chartset="utf-8">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,user-scalable=no,user-scalable=0">
+		<link rel="stylesheet" href="styles/css/main.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+	</head>
+	<body>
+
+		<!-- TOP SIDE BAR -->
+		<header>
+
+			<!-- PLACEHOLDER WRAP -->
+			<div class="placeholder-wrap">
+				<img src="images/placeholder.png" alt="placeholder">
+				<span class="place">Волгоградская область</span>
+			</div>
+			<!-- PLACEHOLDER WRAP END -->
+
+			<!-- NAVIGATION BAR -->
+			<nav>
+				<li class="nav-item">
+					<span>Тендеры</span>
+				</li>
+				<li class="nav-item">
+					<span>База подрядчиков</span>
+				</li>
+				<li class="nav-item">
+					<span>Другие сервисы</span>
+					<img src="images/arrow.png" alt="arrow">
+				</li>
+			</nav>
+			<img src="images/menu.png" alt="menu" class="burger-menu">
+			<!-- NAVIGATION BAR END -->
+
+		</header>
+		<!-- TOP SIDE BAR END -->
+
+		<!-- SEARCH SECTION -->
+		<section class="search-section">
+			<!-- LOGO -->
+			<img src="images/logo.png" alt="logo" class="logo">
+			<!-- LOGO -->
+
+			<!-- CATALOG WRAP -->
+			<div class="catalog-wrap">
+				<button>
+					<img src="images/menu.png" alt="menu">
+					Каталог
+				</button>
+			</div>
+			<!-- CATALOG WRAP -->
+
+			<!-- SEARCH__INPUT WRAP -->
+			<div class="search-input-wrap" id="search">
+				<input type="text" class="search-input" placeholder="Хочу найти..." v-model="in_value">
+				<img src="images/search.png" alt="search">
+				<div class="drop-list" v-if="in_value.length > 0">
+					<div class="list-item" v-for="suggestion in matches"
+						@click="in_value = suggestion">
+						{{ suggestion }}
+					</div>
+				</div>
+			</div>
+			<!-- SEARCH__INPUT WRAP END -->
+			
+			<!-- ITEMS LIST WRAP -->
+			<div class="items__list-wrap">
+				<button>
+					<img src="images/items.png" alt="menu">	
+					Список
+				</button>
+			</div>
+			<!-- ITEMS LIST WRAP END -->
+
+			<!-- PROFILE WRAP -->
+			<div class="profile-wrap">A</div>
+			<!-- PROFILE WRAP -->
+		</section>
+		<!-- SEARCH SECTION END -->
+
+		<!-- LINK TO MAIN SCRIPT -->
+		<script src="scripts/main.js"></script>
+	</body>
+</html>

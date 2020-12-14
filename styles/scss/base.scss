@@ -1,0 +1,58 @@
+$font-stack: Open Sans, sans-serif;
+$primary-color: #708598;
+$black-text-color: #050F19;
+$purple-color: #9B51E0;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+@mixin flex($dir, $just-cont, $align-items) {
+	display: flex;
+	flex-direction: $dir;
+	justify-content: $just-cont;
+	align-items: $align-items;  
+}
+
+@mixin button($bg, $color) {
+	@include flex(row, flex-start, center);
+	padding: 8px 16px;
+	background-color: $bg;
+	color: $color;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 24px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	margin: 6px 24px;
+	outline: none;
+	cursor: pointer;
+	transition: all .3s linear;
+
+	img {
+		margin-right: 8px;
+		width: 20px;
+		height: 20px;
+	}
+
+	&:hover {
+		box-shadow: 2px 2px 5px 2px rgba($bg,.6);
+	}
+
+	&:active {
+		transform: scale(0.9);
+	}	
+}
+
+%header-texts {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+%sections-default {
+	width: 100%;
+	border-bottom: 1px solid #ECEFF1;
+}
